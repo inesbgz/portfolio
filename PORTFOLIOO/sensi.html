@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTENTION CYBERATTAQUE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .warning {
+            font-size: 40px;
+            color: #ff0000;
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .message {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+        .download-status {
+            font-size: 20px;
+            color: #28a745;
+            margin-top: 30px;
+        }
+        ul.message {
+            font-size: 18px;
+            list-style-type: disc;
+            color: #ff4c4c;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="warning">ATTENTION CYBERATTAQUE !</p>
+    <div id="download-simulation" class="hidden">
+        <p class="message">Téléchargement en cours de <strong>malicious.sh</strong>...</p>
+        <div class="download-status" id="download-progress">0%...</div>
+    </div>
+    
+    <p class="message" id="message">Mais non, je plaisante !!</p>
+    <p class="message">Les QR Codes peuvent être dangereux ! En scannant ce code, vous pouvez être redirigé vers des pages malveillantes. Exemple : un fichier malveillant comme <strong>"malicious.sh"</strong> pourrait causer des dégâts. Mais pas de panique, c'est juste un exemple !</p>
+    <img src="image-sensibilisation.jpg" alt="Image de sensibilisation">
+    <p class="message">Ne cliquez jamais sur des QR Codes ou des liens dont vous ne connaissez pas la source !</p>
+    <p class="message">Si vous aviez téléchargé ce fichier malveillant, voici ce qu'il aurait pu faire :</p>
+    <ul class="message">
+        Voler vos données personnelles<br>
+        Installer des logiciels espions sur votre appareil<br>
+        Accéder à vos comptes bancaires ou email
+    </ul>
+    <button class="button" id="realLinkBtn">Cette fois-ci, tu peux cliquer, c'est vraiment le lien vers mon portfolio</button>
+
+    <script>
+        // Fonction de simulation de téléchargement
+        function simulateDownload() {
+            let progress = 0;
+            const progressElement = document.getElementById('download-progress');
+            const downloadSimulation = document.getElementById('download-simulation');
+            downloadSimulation.classList.remove('hidden');
+            
+            const interval = setInterval(() => {
+                progress += 10;
+                progressElement.innerText = progress + '%...';
+                
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        document.getElementById('message').innerText = "Ne t'inquiète pas, ce n'était qu'une simulation !";
+                    }, 500);
+                }
+            }, 500);
+        }
+
+        // Démarre la simulation de téléchargement lorsque la page se charge
+        window.onload = simulateDownload;
+
+        // Lien vers le portfolio après la simulation
+        const realLinkBtn = document.getElementById('realLinkBtn');
+        realLinkBtn.addEventListener('click', function() {
+            window.location.href = "https://ton-portfolio.com"; // Remplace ce lien par le vrai lien vers ton portfolio
+        });
+    </script>
+
+</body>
+</html>
