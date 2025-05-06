@@ -10,17 +10,16 @@
 
 /* Adaptations pour les petits écrans (mobile) */
 @media screen and (max-width: 768px) {
-  /* Projets & Compétences */
-  .skills-cards {
-    display: grid;  /* Passe à un système de grille */
-    grid-template-columns: repeat(2, 1fr);  /* 2 cartes par ligne */
-    gap: 20px;  /* Espacement entre les cartes */
-  }
+    .skills-cards {
+        display: block; /* Modifie la disposition en grille à un bloc */
+    }
 
-  .card-item {
-    width: 100%;  /* Prend toute la largeur de la carte */
-    margin: 0;  /* Supprime les marges */
-  }
+    .card-item {
+        width: 100%; /* Chaque carte occupe 100% de la largeur disponible */
+        margin-bottom: 20px; /* Un petit espace entre les cartes */
+    }
+}
+
 
   /* Frise verticale sur mobile (Timeline) */
   .timeline-vertical-item {
