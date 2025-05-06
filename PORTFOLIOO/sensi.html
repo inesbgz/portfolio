@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- SUPPRIMÉ : redirection automatique -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATTENTION CYBERATTAQUE</title>
@@ -74,14 +75,13 @@
     <p class="message">Ne cliquez jamais sur des QR Codes ou des liens dont vous ne connaissez pas la source !</p>
     <p class="message">Si vous aviez téléchargé ce fichier malveillant, voici ce qu'il aurait pu faire :</p>
     <ul class="message">
-        Voler vos données personnelles<br>
-        Installer des logiciels espions sur votre appareil<br>
-        Accéder à vos comptes bancaires ou email
+        <li>Voler vos données personnelles</li>
+        <li>Installer des logiciels espions sur votre appareil</li>
+        <li>Accéder à vos comptes bancaires ou email</li>
     </ul>
     <button class="button" id="realLinkBtn">Cette fois-ci, tu peux cliquer, c'est vraiment le lien vers mon portfolio</button>
 
     <script>
-        // Fonction de simulation de téléchargement
         function simulateDownload() {
             let progress = 0;
             const progressElement = document.getElementById('download-progress');
@@ -101,15 +101,11 @@
             }, 500);
         }
 
-        // Démarre la simulation de téléchargement lorsque la page se charge
         window.onload = simulateDownload;
 
-        // Lien vers le portfolio après la simulation
-       const realLinkBtn = document.getElementById('realLinkBtn');
-realLinkBtn.addEventListener('click', function() {
-    window.location.href = "https://inesbgz.github.io/portfolio/PORTFOLIOO/Portfolio-INES/index.html"; 
-});
-
+        document.getElementById('realLinkBtn').addEventListener('click', function() {
+            window.location.href = "https://inesbgz.github.io/portfolio/PORTFOLIOO/Portfolio-INES/index.html"; 
+        });
     </script>
 
 </body>
