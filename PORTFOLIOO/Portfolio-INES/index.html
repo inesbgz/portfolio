@@ -7,6 +7,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inès Baghaz - Portfolio</title>
   <style>
+
+/* Adaptations pour les petits écrans (mobile) */
+@media screen and (max-width: 768px) {
+  /* Projets & Compétences */
+  .skills-cards {
+    display: grid;  /* Passe à un système de grille */
+    grid-template-columns: repeat(2, 1fr);  /* 2 cartes par ligne */
+    gap: 20px;  /* Espacement entre les cartes */
+  }
+
+  .card-item {
+    width: 100%;  /* Prend toute la largeur de la carte */
+    margin: 0;  /* Supprime les marges */
+  }
+
+  /* Frise verticale sur mobile (Timeline) */
+  .timeline-vertical-item {
+    width: 100%;  /* Prendre toute la largeur disponible */
+    margin-bottom: 20px;  /* Ajouter un espace entre les éléments */
+    text-align: center;  /* Centrer les éléments */
+  }
+
+  /* Alignement des éléments de la timeline */
+  .timeline-vertical-item.left, .timeline-vertical-item.right {
+    left: 0 !important;  /* Force à prendre toute la largeur */
+    text-align: center;  /* Centrer le texte */
+  }
+
+  /* Ajustement des images dans la timeline */
+  .timeline-logo {
+    width: 150px;  /* Réduire la taille des logos */
+    height: 150px;  /* Ajuster la hauteur des logos */
+  }
+
+  /* Mise en forme du texte dans la timeline */
+  .timeline-content h3 {
+    font-size: 18px;  /* Réduire la taille du texte */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
     /* Global styles */
     body {
       font-family: 'Arial', sans-serif;
