@@ -1,97 +1,12 @@
 <!DOCTYPE html> 
 <html lang="fr">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inès Baghaz - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
-
-/* Adaptations pour les petits écrans (mobile) */
-/* Global styles */
-.skills-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px; /* Espace entre les cartes */
-}
-
-.card-item {
-  background: #f5f5f5;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-/* Styles par défaut pour les cartes (sur grand écran) */
-.card-item {
-  width: 30%; /* 3 cartes par ligne */
-}
-
-/* Styles spécifiques pour mobile (écrans <= 768px) */
-@media screen and (max-width: 768px) {
-  .skills-cards {
-    display: block; /* Les cartes sont maintenant empilées en colonne */
-  }
-  
-  .card-item {
-    width: 100%; /* Chaque carte prend 100% de la largeur */
-    margin-bottom: 20px; /* Espace entre les cartes */
-  }
-}
-
-
-
-  /* Frise verticale sur mobile (Timeline) */
-  .timeline-vertical-item {
-    width: 100%;  /* Prendre toute la largeur disponible */
-    margin-bottom: 20px;  /* Ajouter un espace entre les éléments */
-    text-align: center;  /* Centrer les éléments */
-  }
-
-  /* Alignement des éléments de la timeline */
-  .timeline-vertical-item.left, .timeline-vertical-item.right {
-    left: 0 !important;  /* Force à prendre toute la largeur */
-    text-align: center;  /* Centrer le texte */
-  }
-
-  /* Ajustement des images dans la timeline */
-  .timeline-logo {
-    width: 150px;  /* Réduire la taille des logos */
-    height: 150px;  /* Ajuster la hauteur des logos */
-  }
-
-  /* Mise en forme du texte dans la timeline */
-  .timeline-content h3 {
-    font-size: 18px;  /* Réduire la taille du texte */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	  
-    /* Global styles */
+    /* --- Styles globaux --- */
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -101,23 +16,25 @@
       line-height: 1.6;
     }
 
-.underline-title {
-  text-decoration: underline; /* Souligner uniquement ces titres */
-}
     h1, h2, h3 {
-font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
-  padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 0;
     }
+
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    /* Navigation bar */
+    .underline-title {
+      text-decoration: underline;
+    }
+
+    /* --- Barre de navigation --- */
     nav {
       position: sticky;
       top: 0;
@@ -129,6 +46,7 @@ font-family: 'Montserrat', sans-serif;
       justify-content: center;
       align-items: center;
     }
+
     nav a {
       padding: 10px 20px;
       margin: 0 10px;
@@ -136,38 +54,41 @@ font-family: 'Montserrat', sans-serif;
       font-weight: bold;
       transition: color 0.3s ease;
     }
+
     nav a:hover {
       color: #9b59b6;
     }
 
-    /* Hero Section */
+    /* --- Section Hero --- */
     .hero {
       background: #9b59b6;
       color: white;
       text-align: center;
       padding: 60px 20px;
     }
+
     .hero h1 {
       font-size: 50px;
     }
+
     .hero p {
       font-size: 20px;
       margin-top: 10px;
     }
 
-    /* About Section */
+    /* --- À propos --- */
     .about-section {
       padding: 60px 20px;
       text-align: center;
       background: #f5f5f5;
     }
+
     .about-section p {
       font-size: 20px;
       max-width: 800px;
       margin: 0 auto;
     }
 
-    /* Photo Section */
     .photo-frame {
       border: 5px solid #9b59b6;
       border-radius: 50%;
@@ -176,31 +97,137 @@ font-family: 'Montserrat', sans-serif;
       margin: 20px auto;
       overflow: hidden;
     }
+
     .photo-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    /* Timeline Section (Parcours) */
+    /* --- Timeline verticale (Parcours) --- */
+    .vertical-timeline {
+      padding: 60px 20px;
+      background: #fff;
+      position: relative;
+    }
+
+    .vertical-timeline h2 {
+      font-size: 32px;
+      color: #9b59b6;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .timeline-vertical-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      padding-left: 30px;
+    }
+
+    .timeline-vertical-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: #9b59b6;
+      z-index: 1;
+    }
+
+    .timeline-vertical-item {
+      position: relative;
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .timeline-vertical-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-vertical-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-vertical-item .timeline-content {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-vertical-item .timeline-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      color: #9b59b6;
+      text-align: center;
+      border-bottom: 3px solid #9b59b6;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .timeline-vertical-item.left .timeline-content {
+      margin-right: 80px;
+      text-align: left;
+    }
+
+    .timeline-vertical-item.right .timeline-content {
+      margin-left: 80px;
+    }
+
+    .timeline-vertical-item .timeline-logo {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      vertical-align: middle;
+    }
+
+    .timeline-vertical-line::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 20px solid #9b59b6;
+      z-index: 2;
+    }
+
+    /* --- Alternance / Missions --- */
     .timeline {
       padding: 60px 20px;
       background: #f5f5f5;
-text-align: center;
+      text-align: center;
     }
+
     .timeline h2 {
-font-size: 32px;
-  color: #9b59b6;
-  text-align: center;
-  border-bottom: 3px solid #9b59b6;
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
+      font-size: 32px;
+      color: #9b59b6;
+      text-align: center;
+      border-bottom: 3px solid #9b59b6;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
     }
+
     .timeline ul {
       list-style: none;
       padding: 0;
     }
+
     .timeline li {
       background: #fff;
       padding: 15px;
@@ -209,57 +236,64 @@ font-size: 32px;
       border-left: 5px solid #9b59b6;
       transition: transform 0.3s ease;
     }
+
     .timeline li:hover {
       transform: translateX(10px);
     }
+
     .timeline span {
       display: block;
       color: #555;
     }
 
-    /* Projects & Skills Section */
+    /* --- Projets et compétences --- */
     .projects-skills {
       padding: 60px 20px;
-	background: #fff;
+      background: #fff;
     }
+
     .projects-skills h2 {
       font-size: 32px;
       color: #9b59b6;
       text-align: center;
     }
+
     .skills-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      gap: 20px;
     }
+
     .card-item {
       background: #f5f5f5;
       border-radius: 8px;
       padding: 20px;
-      margin: 10px;
-      width: 30%;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      width: 30%;
     }
+
     .card-item:hover {
       transform: translateY(-5px);
     }
+
     .card-item h3 {
       font-size: 24px;
       color: #222;
     }
+
     .card-item p {
       color: #555;
     }
 
-    /* Styling for project bars */
     .project-bar {
       height: 5px;
       background: #9b59b6;
       margin: 10px 0;
     }
 
-    /* Footer */
+    /* --- Pied de page --- */
     footer {
       background: #9b59b6;
       color: white;
@@ -268,7 +302,6 @@ font-size: 32px;
       font-size: 14px;
     }
 
-    /* Button */
     .linkedin-button {
       background-color: #0e76a8;
       color: white;
@@ -278,295 +311,48 @@ font-size: 32px;
       margin-top: 10px;
       transition: background-color 0.3s ease;
     }
+
     .linkedin-button:hover {
       background-color: #005582;
     }
 
+    /* --- Responsive Mobile --- */
+    @media screen and (max-width: 768px) {
+      .skills-cards {
+        display: block;
+      }
 
+      .card-item {
+        width: 100%;
+        margin-bottom: 20px;
+      }
 
+      .timeline-vertical-item,
+      .timeline-vertical-item.left,
+      .timeline-vertical-item.right {
+        left: 0 !important;
+        width: 100%;
+        text-align: center;
+      }
 
+      .timeline-vertical-item .timeline-content {
+        margin: 0 auto;
+      }
 
-.vertical-timeline {
-  padding: 60px 20px;
-  background: #fff;
-  position: relative;
-}
-.vertical-timeline h2 {
-  font-size: 32px;
-  color: #9b59b6;
-  text-align: center;
-  margin-bottom: 40px;
-}
-.timeline-vertical-container {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-  padding-left: 30px;
-}
-.timeline-vertical-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: #9b59b6;
-  z-index: 1;
-}
-.timeline-vertical-item {
-  position: relative;
-  width: 50%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-.timeline-vertical-item.left {
-  left: 0;
-  text-align: right;
-}
-.timeline-vertical-item.right {
-  left: 50%;
-  text-align: left;
-}
-.timeline-vertical-item .timeline-content {
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 8px;
-  display: inline-block;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  position: relative;
-  z-index: 2;
-}
+      .timeline-logo {
+        width: 150px;
+        height: 150px;
+      }
 
-.timeline-vertical-item .timeline-content h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
-  color: #9b59b6;
-  text-align: center;
-  border-bottom: 3px solid #9b59b6;
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.timeline-vertical-item.left .timeline-content {
-  margin-right: 80px;
-  text-align: left;
-}
-.timeline-vertical-item.right .timeline-content {
-  margin-left: 80px;
-}
-.timeline-vertical-item .timeline-logo {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  margin-bottom: 10px;
-  vertical-align: middle;
-}
-
-.timeline-vertical-line::before {
-  content: "";
-  position: absolute;
-  top: -20px; /* plus haut que la ligne */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 20px solid #9b59b6; /* même couleur que ta ligne */
-  z-index: 2;
-}
-
-
-
-@media screen and (max-width: 768px) {
-  .timeline-vertical-item,
-  .timeline-vertical-item.left,
-  .timeline-vertical-item.right {
-    left: 0 !important;
-    width: 100%;
-    text-align: center;
-  }
-  .timeline-vertical-item .timeline-content {
-    margin: 0 auto;
-  }
-}
+      .timeline-content h3 {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-<nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-  <div style="flex: 1; text-align: left; font-size: 14px;">📍 Dreux / Évreux / Paris</div>
-  <div style="flex: 2; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-    <a href="#about" style="margin: 0 10px;">À propos</a>
-    <a href="#parcours" style="margin: 0 10px;">Parcours</a>
-    <a href="#alternance" style="margin: 0 10px;">Alternance</a>
-    <a href="#projects-skills" style="margin: 0 10px;">Projets - Compétences</a>
-    <a href="#contact" style="margin: 0 10px;">Contact</a>
-  </div>
-  <div style="flex: 1; text-align: right;">
-    <span style="font-size: 20px;">🇫🇷</span>
-    <img src="img portfolio/izi by edf.webp" alt="Izi by EDF" style="height: 24px; vertical-align: middle; margin-left: 5px;">
-  </div>
-</nav>
+  <!-- Le contenu du <body> suit ce modèle que tu as fourni -->
 
-
-
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Inès Baghaz</h1>
-    <p>Étudiante en cybersécurité | Alternante chez Izi by EDF</p>
-  </div>
-
-  <!-- About Section -->
-  <div id="about" class="about-section">
-    <div class="photo-frame">
-      <img src="img portfolio\ines.jpg" alt="Inès Baghaz">
-    </div>
-    <p>Alternante de 22 ans en cybersécurité à l’ESIEA X Izi by EDF, je suis déterminée à développer au maximum mes compétences et à contribuer efficacement à la sécurité des systèmes d’information, tout en cherchant constamment à relever de nouveaux défis techniques.</p>
-  </div>
-
-  <!-- Parcours (Timeline) Section -->
-
-  <!-- Parcours (Timeline) Section Version Verticale -->
-<div id="parcours" class="vertical-timeline">
-  <h2 class="underline-title" >Mon Parcours</h2>
-  <div class="timeline-vertical-container">
-    <div class="timeline-vertical-line"></div>
-
-   <!-- Événement 4 -->
-    <div class="timeline-vertical-item right">
-      <img src="img portfolio/google.org2.jpg" alt="Google.org" class="timeline-logo">
-      <div class="timeline-content">
-        <h3>2025 : Formation Google.org</h3>
-        <p>Formation spécialisée en cybersécurité pour aider les collectivités locales.</p>
-      </div>
-    </div>
-  
-
-    <!-- Événement 3 -->
-    <div class="timeline-vertical-item left">
-      <img src="img portfolio/universite michigan.jpg" alt="Université du Michigan" class="timeline-logo">
-      <div class="timeline-content">
-        <h3>2024 : Université du Michigan</h3>
-        <p>Échange international de 2 mois en informatique.</p>
-      </div>
-    </div>
-    
-    <!-- Événement 1 -->
-    <div class="timeline-vertical-item right">
-      <img src="img portfolio/ESIEA.png" alt="ESIEA" class="timeline-logo">
-      <div class="timeline-content">
-        <h3>2023 - 2026 : ESIEA (Paris)</h3>
-        <p>Formation en cybersécurité en alternance chez Izi by EDF.</p>
-      </div>
-    </div>
-
-    <!-- Événement 2 -->
-    <div class="timeline-vertical-item left">
-      <img src="img portfolio/Logo-Benjam-300dpi.png"" alt="Prépa Orléans" class="timeline-logo">
-      <div class="timeline-content">
-        <h3>2021 - 2023 : Prépa Maths Physique </h3>
-        <p>Classes préparatoires aux grandes écoles.</p>
-      </div>
-    </div>
-
-</div>
-</div>
-
-
-
- 
-
-
-  <!-- Alternance Section -->
-  <div id="alternance" class="timeline">
-    <h2>Mes Missions chez Izi by EDF</h2>
-    <ul>
-      <li>
-        <h3>2024 - Présent : Suiveillance & Formations</h3>
-        <span>Surveillance des systèmes pour détecter des vulnérabilités et mise en œuvre des correctifs. Participation à des campagnes de sensibilisation à la sécurité, gestion de l'infrastructure de sécurité.</span>
-      </li>
-      <li>
-        <h3>2024 - Présent : Analyse de risques</h3>
-        <span>Mise en place de Plans de Continuité d'Activité (PCA) et Plans de Reprise d'Activité (PRA).</span>
-      </li>
-      <li>
-        <h3>2024 - Présent : Veille technologique</h3>
-        <span>Participation à la veille sur les nouvelles menaces et vulnérabilités en cybersécurité. Proposition d'améliorations pour renforcer la sécurité des systèmes d'information.</span>
-      </li>
-      <li>
-        <h3>2024 - Présent : Gestion des VLAN et Firewall</h3>
-        <span>Configuration de routeurs en mode firewall et contrôle wifi, gestion des VLAN et mise en place de bonnes pratiques de segmentation réseau.</span>
-      </li>
-      <li>
-       	<h3>2024 - Présent : Cartographie Réseau et documentation 365</h3>
-        <span>Réalisation de cartographies de réseaux,  recommandations et documentation Microsoft.</span>
-      </li>
-      <li>
-	<h3>2023 - Présent : Extraction de données et Gestion ERP</h3>
-        <span>Exécution de tâches d'extraction de données et de gestion ERP pour analyser les flux d'informations au sein de l'entreprise.</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Projects & Skills Section -->
-  <div id="projects-skills" class="projects-skills">
-    <h2 class="underline-title">Projets - Compétences</h2>
-    <div class="skills-cards">
-      <!-- Cyber Projects (First Row) -->
-      <div class="card-item">
-        <div class="project-bar"></div>
-        <h3>CTF - Capture The Flag</h3>
-        <p>Participation à des challenges CTF pour tester mes compétences en sécurité informatique.</p>
-        <p><strong>Outils utilisés :</strong> Kali Linux, Burp Suite, PortSwigger, JuiceShop</p>
-      </div>
-      <div class="card-item">
-        <div class="project-bar"></div>
-        <h3>Mail de Phishing </h3>
-        <p>Développement et test de systèmes de détection et prévention de mails de phishing.</p>
-        <p><strong>Outils utilisés :</strong> Vercel, Webhook, SMTP</p>
-      </div>
-      <div class="card-item">
-        <div class="project-bar"></div>
-        <h3>Cryptographie</h3>
-        <p>Attaques protocolaires et correction des protocoles.</p>
-        <p><strong>Outils utilisés :</strong> EsieaVERIF</p>
-      </div>
-    </div>
-
-    <div class="skills-cards">
-      <!-- Non-Cyber Projects (Second Row) -->
-      <div class="card-item">
-        <div class="project-bar"></div>
-        <h3>Site de Réservation d'Hôtel (Java)</h3>
-        <p>Développement d'un site de réservation d'hôtel avec gestion des chambres, des réservations, et des utilisateurs.</p>
-        <p><strong>Outils utilisés :</strong> Java, Linux</p>
-      </div>
-      <div class="card-item">
-        <div class="project-bar"></div>
-        <h3>Thermomètre</h3>
-        <p>Création d'un thermomètre avec un microcontrôleur STM32 et une LED qui change de couleur en fonction de la température.</p>
-        <p><strong>Outils utilisés :</strong> C, STM32, LED</p>
-      </div>
-      <div class="card-item">
-        <div class="project-bar"></div>
-        <h3>Jeu du Pendu</h3>
-        <p>Création d'un jeu du pendu, pour apprendre la gestion des interfaces et de la logique de jeu.</p>
-        <p><strong>Outils utilisés :</strong> C </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-<div id="contact" class="timeline">
-   <footer>
-    <p>© 2025 Inès Baghaz | <a href="https://fr.linkedin.com/in/ines-baghaz-bbb43624a" class="linkedin-button">Voir sur LinkedIn</a> 
-	 | <a href="tel:+33650952970" target="_blank">📞  06 50 95 29 70</a>
-         | <a href="mailto:ines.baghaz@gmail.com" target="_blank">✉️  ines.baghaz@gmail.com</a>
-   </p>
-  </footer>
-</div>
+  <!-- ... -->
 </body>
 </html>
